@@ -1,0 +1,10 @@
+body {
+    background: rgb(25, 47, 61);
+    background: linear-gradient(180deg, rgba(25, 47, 61, 1) 0%, rgba(20, 55, 57, 1) 54%, rgba(25, 61, 62, 1) 100%);
+    background-attachment: fixed;
+}
+
+.container {
+    margin-left: 15%;
+    padding-right: 15%;
+  }
