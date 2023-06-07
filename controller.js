@@ -1,3 +1,14 @@
+function fact(num) {
+    var result = num;
+    if (num === 0 || num === 1) 
+      return 1; 
+    while (num > 1) { 
+      num--;
+      result *= num;
+    }
+    return result;
+  }
+
 function mm1(event){
 
     event.preventDefault()
@@ -27,4 +38,28 @@ function mm1(event){
         document.getElementById("ProbField").innerHTML = probField+"%";
     }
     
+}
+
+function mmm(event){
+
+    event.preventDefault()
+
+    var lambda = parseInt(document.getElementById("lambdaField").value);
+    var miu = parseInt(document.getElementById("miuField").value);
+    var m = parseInt(document.getElementById("mField").value);
+    var sumatoria = 0;
+
+    for (let n = 0; n < m-1; n++){
+        var resultado = ((1 / fact(n)) * Math.pow((lambda/miu),n)); 
+        sumatoria += resultado;
+    }
+
+    var P0 = (1/(sumatoria + ((1/fact(m))+(Math.pow((lambda / miu),m)*((m*miu)/((m*miu)-lambda)))))).toFixed(2);
+
+    //Revisar el P0
+    document.getElementById("P0Field").innerHTML = P0*100+"%";
+
+    var L = (((((lambda*miu)*Math.pow(lambda/miu,m))/(fact(m-1)*Math.pow((m*miu)-lambda,2))))*P0+(lambda/miu)).toFixed(2);
+
+    document.getElementById("LField").innerHTML = L;
 }
