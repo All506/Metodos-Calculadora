@@ -78,3 +78,24 @@ function mmm(event) {
         document.getElementById("cardResultText").innerHTML = "El tiempo estimado en cola es de " + 60 * Wq + " minutos, mientras que el tiempo de servicio (en el que se atiende) es de " + W * 60 + " minutos.";
     }
 }
+
+function md1(event){
+
+    event.preventDefault()
+
+    var lambda = parseInt(document.getElementById("lambdaField").value);
+    var miu = parseInt(document.getElementById("miuField").value);
+
+    var Lq = (Math.pow(lambda,2)/((2*miu)*(miu-lambda)));
+    var Wq = ((lambda)/((2*miu)*(miu-lambda)));
+    var L = Lq + (lambda/miu);
+    var W = (Wq + (1/miu));
+
+    document.getElementById("LqField").innerHTML = Lq.toFixed(2);
+    document.getElementById("WqField").innerHTML = Wq.toFixed(2);
+    document.getElementById("LField").innerHTML = L.toFixed(2);
+    document.getElementById("WField").innerHTML = W.toFixed(2);
+
+    document.getElementById("cardResult").style.visibility = 'visible';
+        document.getElementById("cardResultText").innerHTML = "El tiempo estimado en cola es de " + 60 * Wq.toFixed(2) + " minutos, mientras que el tiempo de servicio (en el que se atiende) es de " + (W * 60).toFixed(2) + " minutos.";
+}

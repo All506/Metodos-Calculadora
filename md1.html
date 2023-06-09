@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calculadora Métodos Cuantitativos MD1</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!--Navbar-->
+
+    <nav class="navbar  navbar-expand-lg bg-body-tertiary bg-dark border-bottom border-bottom-dark"
+        data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Teoria de Colas</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">M/M/1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="mmm.html">M/M/M</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">M/D/1</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--Final Navbar-->
+
+    <!--Información Modelo-->
+    <div class="text-center text-light">
+        <h1>Modelo M/D/1</h1>
+    </div>
+    <!---->
+    <!--FORM-->
+    <br>
+    <form class="row gy-2 gx-3 align-items-center justify-content-center text-center" onsubmit="md1(event)">
+        <div class="col-auto">
+            <label class="visually-hidden" for="lambdaField">lambda</label>
+            <input type="number" class="form-control" id="lambdaField" placeholder="λ" data-toggle="tooltip"
+                title="Número medio de llegadas por periodo (Por ejemplo, por hora)">
+        </div>
+
+        <div class="col-auto">
+            <label class="visually-hidden" for="miuField">miu</label>
+            <input type="number" class="form-control" id="miuField" placeholder="µ" data-toggle="tooltip"
+                title="Número medio de personas o artículos que se atienden por periodo">
+        </div>
+
+        <div class="col-auto">
+            <button type="submit" class="btn btn-success">Resolver</button>
+        </div>
+    </form>
+    <!--Final Form-->
+
+    <!--Resultados-->
+    <br>
+    <div class="container">
+        <table class="table align-items-center justify-content-center text-center">
+            <thead>
+                <tr>
+                    <th scope="col">Ecuación</th>
+                    <th scope="col">Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-toggle="tooltip"
+                    title="El número promedio de clientes o unidades en el sistema, L, es decir, el número en la fila más el el número que se atiende">
+                    <td>L</td>
+                    <td id="LField">Inserte los valores</td>
+                </tr>
+                <tr data-toggle="tooltip"
+                    title="El tiempo promedio que un cliente pasa en el sistema. El tiempo que pasa en la fila más el tiempo en que se le atiende. Multiplicado por 60 son los minutos en el sistema.">
+                    <td>W</td>
+                    <td id="WField">Inserte los valores</td>
+                </tr>
+                <tr data-toggle="tooltip" title="Número promedio de clientes en la cola">
+                    <td>Lq</td>
+                    <td id="LqField">Inserte los valores</td>
+                </tr>
+                <tr data-toggle="tooltip"
+                    title="El tiempo promedio que pasa un cliente esperando en cola. Multiplicado por 60 son los minutos en la cola.">
+                    <td>Wq</td>
+                    <td id="WqField">Inserte los valores</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!--Final Resultados-->
+
+    <!--Interpretación-->
+    <div class="container" id="cardResult" style="visibility: hidden;">
+        <div class="card mb-3" style="max-width: 100%;">
+            <div class="card-body">
+                <h5 class="card-title">En tiempo</h5>
+                <p class="card-text" id="cardResultText"></p>
+            </div>
+        </div>
+        <!--Final Interpretacion-->
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+            crossorigin="anonymous"></script>
+        <script src="controller.js"></script>
+</body>
+
+</html>
