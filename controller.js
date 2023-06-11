@@ -23,7 +23,7 @@ function mm1(event) {
         var LValue = lambda / (miu - lambda);
         var WField = 1 / (miu - lambda);
         var LqField = ((lambda * lambda) / (miu * (miu - lambda))).toFixed(2);
-        var WqField = (lambda / miu * (miu - lambda)).toFixed(2);
+        var WqField = (lambda / (miu * (miu - lambda))).toFixed(2);
         var pField = (lambda / miu).toFixed(2) * 100;
         var P0Field = (1 - (lambda / miu)).toFixed(2) * 100;
         var probField = Math.pow((lambda / miu), (k + 1)).toFixed(2) * 100;
