@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Calculadora Métodos Cuantitativos MMM</title>
+  <title>Calculadora Métodos Cuantitativos MM1 Infinita</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
@@ -26,13 +26,13 @@
             <a class="nav-link active" aria-current="page" href="mm1.html">M/M/1</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">M/M/M</a>
+            <a class="nav-link active" aria-current="page" href="mmm.html">M/M/M</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="md1.html">M/D/1</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="mm1_infinit.html">M/M/1 Inf</a>
+            <a class="nav-link active" aria-current="page" href="#">M/M/1 Inf</a>
         </li>
         </ul>
       </div>
@@ -42,29 +42,27 @@
 
   <!--Información Modelo-->
   <div class="text-center text-light">
-    <h1>Modelo M/M/M</h1>
+    <h1>Modelo M/M/1 Infinito</h1>
   </div>
   <!---->
-
   <!--FORM-->
   <br>
-  <form class="row gy-2 gx-3 align-items-center justify-content-center text-center" onsubmit="mmm(event)">
+  <form class="row gy-2 gx-3 align-items-center justify-content-center text-center" onsubmit="mm1inf(event)">
     <div class="col-auto">
       <label class="visually-hidden" for="lambdaField">lambda</label>
-      <input type="number" class="form-control" id="lambdaField" placeholder="λ" data-toggle="tooltip"
+      <input type="text" class="form-control" id="lambdaField" placeholder="λ" data-toggle="tooltip"
         title="Número medio de llegadas por periodo (Por ejemplo, por hora)">
     </div>
 
     <div class="col-auto">
       <label class="visually-hidden" for="miuField">miu</label>
-      <input type="number" class="form-control" id="miuField" placeholder="µ" data-toggle="tooltip"
+      <input type="text" class="form-control" id="miuField" placeholder="µ" data-toggle="tooltip"
         title="Número medio de personas o artículos que se atienden por periodo">
     </div>
 
     <div class="col-auto">
-      <label class="visually-hidden" for="mField">m</label>
-      <input type="number" class="form-control" id="mField" placeholder="m" data-toggle="tooltip"
-        title="Número de canales">
+      <label class="visually-hidden" for="NField">N</label>
+      <input type="text" class="form-control" id="NField" placeholder="N">
     </div>
 
     <div class="col-auto">
@@ -112,6 +110,10 @@
           title="Porcentaje de tiempo ocioso, es decir, la probabilidad de que nadie esté en el sistema">
           <td>P0</td>
           <td id="P0Field">Inserte los valores</td>
+        </tr>
+        <tr data-toggle="tooltip" title="Probabilidad de que un número de clientes en el sistema sea mayor que k">
+          <td>Probabilidad</td>
+          <td id="ProbField">Inserte los valores</td>
         </tr>
       </tbody>
     </table>
