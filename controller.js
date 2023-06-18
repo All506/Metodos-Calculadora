@@ -116,25 +116,22 @@ function mm1inf(event) {
             sumatoria += (fact(N)/fact(N-n))*Math.pow((lambda/miu),n);
         }
 
-        var P0Field = (1/sumatoria);//--
-        var LqField = (N- ((lambda + miu)/lambda)*(1-P0Field));//--
+        var P0Field = (1/sumatoria);
+        var LqField = (N- ((lambda + miu)/lambda)*(1-P0Field));
         var LValue  = (LqField + (1-P0Field));//--
-        var WqField = (LqField/((N-LValue)*lambda));//--
-        var WField  = (WqField + (1/miu));//--
-        //var pField = (lambda / miu).toFixed(2) * 100;
-        //var probField = Math.pow((lambda / miu), (N + 1)).toFixed(2) * 100;
+        var WqField = (LqField/((N-LValue)*lambda));
+        var WField  = (WqField + (1/miu));
 
 
         document.getElementById("LField").innerHTML = LValue.toFixed(2);
         document.getElementById("WField").innerHTML = WField.toFixed(2);
         document.getElementById("LqField").innerHTML = LqField.toFixed(2);
         document.getElementById("WqField").innerHTML = WqField.toFixed(2);
-        //document.getElementById("pField").innerHTML = pField + "%";
         document.getElementById("P0Field").innerHTML = (P0Field * 100).toFixed(2) + "%";
-        //document.getElementById("ProbField").innerHTML = probField + "%";
+
 
         document.getElementById("cardResult").style.visibility = 'visible';
-        document.getElementById("cardResultText").innerHTML = "El tiempo estimado en cola es de " + 60 * WqField + " minutos, mientras que el tiempo de servicio (en el que se atiende) es de " + WField * 60 + " minutos.";
+        document.getElementById("cardResultText").innerHTML = "El tiempo estimado en cola es de " + (60 * WqField).toFixed() + " minutos, mientras que el tiempo de servicio (en el que se atiende) es de " + (WField * 60).toFixed() + " minutos.";
     }
 
 }
